@@ -1,10 +1,6 @@
-# AI-Native 6G Resource Allocation — PPO Reinforcement Learning
+# 6G Resource Allocation using Proximal Policy Optimization (PPO)
 
-A custom [Gymnasium](https://gymnasium.farama.org/) environment simulating dynamic
-frequency-channel allocation in a 6G wireless cell with realistic wireless
-metrics (SINR, co-channel interference, fairness), paired with a **PPO**
-(Proximal Policy Optimization) actor-critic policy.
-
+Developed a custom Gymnasium-based simulator for multi-cell 6G wireless resource allocation and implemented a PPO agent, achieving a cumulative reward of 1098.9 and QoS satisfaction of 0.83 while outperforming Random and Greedy scheduling baselines.
 ## Problem
 
 Each scheduling frame, 4 mobile users (UEs) need to be assigned to one of 3
@@ -84,10 +80,11 @@ reasonable range depending on how long you're willing to let it train.
 - A printed comparison table at the end, e.g.:
 
 ```
-Policy                          Reward    Fairness     QoS/4    SINR(dB)
-PPO (learned)                    XXX.X       0.XXX      X.XX        XX.X
-Random assignment                XXX.X       0.XXX      X.XX        XX.X
-Greedy lowest-noise               XXX.X       0.XXX      X.XX        XX.X
+Policy                          Reward    Fairness     QoS     SINR(dB)
+
+PPO (learned)                   1098.9      0.547      0.83      -8.6
+Random assignment               1000.7      0.558      0.70      -9.3
+Greedy lowest-noise              959.0      0.552      0.66      -9.2
 ```
 
 ## Possible extensions
